@@ -1,8 +1,13 @@
 package com.company;
 
+import com.company.view.MenuPrincipal;
+
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hola");
+        MenuPrincipal menuPrincipal = new MenuPrincipal();
+        menuPrincipal.show();
     }
+
+
 }
