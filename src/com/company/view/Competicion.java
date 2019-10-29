@@ -5,7 +5,8 @@ import com.company.model.Participante;
 
 import java.util.Scanner;
 
-public class MenuCompeticion {
+public class Competicion {
+
     public void show() {
         Scanner sc = new Scanner(System.in);
 
