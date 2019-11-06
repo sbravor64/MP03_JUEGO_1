@@ -2,6 +2,6 @@ package com.company.model;
 
 import java.util.Scanner;
 
-public class Coches extends Vehiculo{
+public class Coche extends Vehiculo{
     int vel;
 }
