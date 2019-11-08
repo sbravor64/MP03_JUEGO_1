@@ -5,8 +5,10 @@ import com.company.model.Participante;
 
 import java.util.Scanner;
 
-public class Competicion {
-    public String nomJ;
+public class Configuracion {
+    private String nomJ;
+    private int cantParticipantes;
+    private int cantCircuitos;
 
     public void show() {
         Scanner sc = new Scanner(System.in);
@@ -16,17 +18,31 @@ public class Competicion {
         Campeonato campeonato = new Campeonato();
 
         System.out.print("Ecribir nombre del jugador: ");
-        participante.setNom();
-        nomJ=participante.getNom();
+        nomJ=sc.nextLine();
+        participante.setNom(nomJ);
+
         System.out.print("Cantidad de Participantes: ");
-        campeonato.setNumParticipantes();
+        cantParticipantes=sc.nextInt();
+        campeonato.setNumParticipantes(cantParticipantes);
+        sc.nextLine();
+
         System.out.print("Cantidad de Circuitos: ");
-        campeonato.setNumCircuitos();
+        cantCircuitos = sc.nextInt();
+        campeonato.setNumCircuitos(cantCircuitos);
+
         System.out.println("");
         menuPrincipal.show();
     }
 
     public String getNomJ() {
         return nomJ;
+    }
+
+    public int getCantParticipantes() {
+        return cantParticipantes;
+    }
+
+    public int getCantCircuitos() {
+        return cantCircuitos;
     }
 }

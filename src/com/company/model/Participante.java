@@ -1,21 +1,15 @@
 package com.company.model;
-
-import com.company.view.MenuVehiculo;
-
 import java.util.Random;
-import java.util.Scanner;
 
 public class Participante {
-    MenuVehiculo menuVehiculo = new MenuVehiculo();
 
-    Scanner sc = new Scanner(System.in);
     private String nom = "player";
     private String nomP;
     private float time;
     private String vehiculo;
 
-    public void setNom() {
-        nom=sc.nextLine();
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
     public String getNom(){

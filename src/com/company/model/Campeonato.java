@@ -7,16 +7,16 @@ public class Campeonato {
     private int numCircuitos;
     private int numParticipantes;
 
-    public void setNumCircuitos() {
-        numCircuitos =sc.nextInt();
+    public void setNumCircuitos(int numCircuitos) {
+        this.numCircuitos = numCircuitos;
     }
 
     public int getNumCircuitos(){
         return numCircuitos;
     }
 
-    public void setNumParticipantes() {
-        numParticipantes=sc.nextInt();
+    public void setNumParticipantes(int numParticipantes) {
+        this.numParticipantes = numParticipantes;
     }
 
     public int getNumParticipantes(){

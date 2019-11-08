@@ -3,8 +3,7 @@ package com.company.view;
 import java.util.Scanner;
 
 public class MenuPrincipal {
-    Competicion competicion = new Competicion();
-    MenuVehiculo jugar = new MenuVehiculo();
+    Configuracion configuracion = new Configuracion();
 
     public void show() {
 
@@ -17,10 +16,11 @@ public class MenuPrincipal {
             int opcion= sc.nextInt();
             switch (opcion) {
                 case 1:
-                    competicion.show();
+                    configuracion.show();
                     break;
                 case 2:
-                    jugar.show();
+                    MenuVehiculo vehiculo = new MenuVehiculo(configuracion);
+                    vehiculo.show();
                     break;
                 case 3:
                     break;

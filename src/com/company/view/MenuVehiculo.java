@@ -6,13 +6,19 @@ import com.company.model.*;
 import java.util.Scanner;
 
 public class MenuVehiculo {
-    Jugar jugar = new Jugar();
+    Configuracion configuracion;
+
+
+    public MenuVehiculo(Configuracion configuracion) {
+        this.configuracion = configuracion;
+    }
 
     Participante participante = new Participante();
     Scanner sc = new Scanner(System.in);
     private int opcion;
 
     public void show() {
+        Jugar jugar = new Jugar(configuracion);
         System.out.println("1. Coche");
         System.out.println("2. Moto");
         System.out.println("3. Bicicleta");
@@ -31,7 +37,6 @@ public class MenuVehiculo {
                 participante.setVehiculo("Bicicleta");
                 Bicicleta bicicleta = new Bicicleta();
                 jugar.start();
-
         }
     }
 }
