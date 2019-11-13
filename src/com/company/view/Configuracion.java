@@ -13,7 +13,6 @@ public class Configuracion {
     public void show() {
         Scanner sc = new Scanner(System.in);
 
-        MenuPrincipal menuPrincipal = new MenuPrincipal();
         Participante participante = new Participante();
         Campeonato campeonato = new Campeonato();
 
@@ -31,7 +30,15 @@ public class Configuracion {
         campeonato.setNumCircuitos(cantCircuitos);
 
         System.out.println("");
-        menuPrincipal.show();
+    }
+
+    @Override
+    public String toString() {
+        return "Configuracion{" +
+                "nomJ='" + nomJ + '\'' +
+                ", cantParticipantes=" + cantParticipantes +
+                ", cantCircuitos=" + cantCircuitos +
+                '}';
     }
 
     public String getNomJ() {

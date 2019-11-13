@@ -1,10 +1,10 @@
 package com.company.model;
+import java.util.Objects;
 import java.util.Random;
 
-public class Participante {
+public class Participante implements Comparable<Participante>{
 
-    private String nom = "player";
-    private String nomP;
+    private String nom;
     private float time;
     private String vehiculo;
 
@@ -13,14 +13,17 @@ public class Participante {
     }
 
     public String getNom(){
-        System.out.println(nom);
         return nom;
     }
 
-    public void timeParticipante(){
-        float min = 0F;
-        float max = 2F;
+    public void setTime(){
+        float min = 1F;
+        float max = 4F;
         time = min + new Random().nextFloat() * (max - min);
+    }
+
+    public float getTime() {
+        return time;
     }
 
     public void setVehiculo(String vehiculo){
@@ -29,5 +32,20 @@ public class Participante {
 
     public String getVehiculo() {
         return vehiculo;
+    }
+
+    public int hashCode() {
+        return Objects.hash(time);
+    }
+
+    @Override
+    public int compareTo(Participante participante) {
+        if(getTime() < participante.getTime()){
+            return -1;
+        } else if(getTime() > participante.getTime()){
+            return 1;
+        }else {
+            return 0;
+        }
     }
 }
