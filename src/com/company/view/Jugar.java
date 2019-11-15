@@ -23,7 +23,7 @@ public class Jugar {
 
         int cantPart = configuracion.getCantParticipantes();
 
-        for (int i = 0; i < cantPart; i++) {
+        for (int i = 1; i <= cantPart; i++) {
             Participante p = new Participante();
             p.setNom("participante " + i);
             participanteList.add(p);
@@ -38,10 +38,25 @@ public class Jugar {
             }
 
             Collections.sort(participanteList);
-            for (Participante p_ordenado: participanteList) {
-                System.out.format("%.2f",p_ordenado.getTime());
-                System.out.println();
+
+            for (int j = 0; j <3 ; j++) {
+                Participante p = participanteList.get(j);
+                if(j==0){
+                    p.setPuntos(p.getPuntos()+3);
+                } else if(j==1){
+                    p.setPuntos(p.getPuntos()+2);
+                } else if(j==2){
+                    p.setPuntos(p.getPuntos()+1);
+                }
             }
+
+            for (Participante p_ordenado: participanteList) {
+                System.out.format(p_ordenado.getNom() + " ----> " + p_ordenado.getPuntos() + "-----" + "%.2f",p_ordenado.getTime());
+                System.out.print("s");
+                System.out.println("");
+            }
+
+            System.out.println("");
         }
     }
 

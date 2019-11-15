@@ -8,6 +8,16 @@ public class Participante implements Comparable<Participante>{
     private float time;
     private String vehiculo;
 
+    private int puntos=0;
+
+    public int getPuntos() {
+        return puntos;
+    }
+
+    public void setPuntos(int puntos) {
+        this.puntos = puntos;
+    }
+
     public void setNom(String nom) {
         this.nom = nom;
     }
