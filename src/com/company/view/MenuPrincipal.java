@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class MenuPrincipal {
     Configuracion configuracion = new Configuracion();
     Jugar jugar = new Jugar(configuracion);
+    Resultados resultados = new Resultados(jugar.participanteList);
 
     public void show() {
         Scanner sc = new Scanner(System.in);
@@ -26,7 +27,7 @@ public class MenuPrincipal {
                     jugar.start();
                     break;
                 case 3:
-                    break;
+                    resultados.mostrar();
                 case 4:
                     break;
             }

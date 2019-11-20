@@ -7,13 +7,15 @@ import java.util.*;
 public class Jugar {
     Scanner sc = new Scanner(System.in);
     Configuracion configuracion;
-    List<Participante> participanteList = new ArrayList<>();
+    ArrayList<Participante> participanteList = new ArrayList<>();
+    ComparadorPuntosParticipantes comparadorPuntos = new ComparadorPuntosParticipantes();
 
     public Jugar(Configuracion configuracion) {
         this.configuracion = configuracion;
     }
 
     public void start() {
+        participanteList.clear();
         elegirVehiculo();
 
         Participante Pjugador = new Participante();
@@ -42,19 +44,24 @@ public class Jugar {
             for (int j = 0; j <3 ; j++) {
                 Participante p = participanteList.get(j);
                 if(j==0){
-                    p.setPuntos(p.getPuntos()+3);
+                    p.setPuntos(p.getPuntos()+10);
                 } else if(j==1){
-                    p.setPuntos(p.getPuntos()+2);
+                    p.setPuntos(p.getPuntos()+8);
                 } else if(j==2){
-                    p.setPuntos(p.getPuntos()+1);
+                    p.setPuntos(p.getPuntos()+6);
                 }
             }
 
             for (Participante p_ordenado: participanteList) {
-                System.out.format(p_ordenado.getNom() + " ----> " + p_ordenado.getPuntos() + "-----" + "%.2f",p_ordenado.getTime());
+                System.out.format(p_ordenado.getNom() + " ----> " + "%.2f",p_ordenado.getTime());
                 System.out.print("s");
                 System.out.println("");
             }
+
+            Collections.sort(participanteList, comparadorPuntos);
+
+            Resultados resultados = new Resultados(participanteList);
+            resultados.setListParticipantes(participanteList);
 
             System.out.println("");
         }
